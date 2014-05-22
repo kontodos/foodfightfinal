@@ -1,0 +1,7 @@
+
+<%= simple_form_for @restaurant do |f| %>
+<%= f.input :restaurant_id, :collection => Restaurant.all %>
+	<br />
+	<br />
+	<%= f.button :submit %>
+<% end %>

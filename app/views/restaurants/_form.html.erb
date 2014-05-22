@@ -1,0 +1,13 @@
+
+<%= simple_form_for @restaurant, :html => { :multipart => true } do |f| %>
+<%= f.input :name %>
+	<%= f.input :contact %>
+	<%= f.input :address %>
+	<%= f.input :description, as: :text %>
+	<br />
+	<%= f.label :avatar %>
+	<%= f.file_field :avatar %>
+	<br />
+	<br />
+	<%= f.button :submit %>
+<% end %>

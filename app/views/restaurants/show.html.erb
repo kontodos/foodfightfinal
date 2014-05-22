@@ -1,0 +1,31 @@
+<body>
+<div class="navbar">
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li><%= link_to "Food Fight!", foodfight_path %></li>
+		<li id="login"><%= link_to "Login", login_path %></li>
+	</ul>
+</div>
+
+<div class="content2">
+	<div class="heading">
+		<h1><%= @restaurant.name %></h1>
+	</div>
+	
+	<% @restaurant.foods.each do |f| %>
+	<div class="food">
+		<div class="thumb">
+			<%= image_tag f.avatar.url(:medium) %></li>
+		</div>
+		
+		<div class="details">
+			<h3><%= f.name %></h3>
+			<h4>Price:&nbsp<%= f.price %></h4>
+			<h4>Description:&nbsp<%= f.description %></h4>
+		</div>
+	</div>
+	<% end %>
+
+</div>

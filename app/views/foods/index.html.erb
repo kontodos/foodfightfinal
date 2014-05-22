@@ -1,0 +1,31 @@
+<h1>List of Foods of <%= @restaurant.name %></h1>
+<table class="table">
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Price</td>
+			<td>Rating</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	
+	<tbody>
+	<% @restaurant.foods.each do |f| %>
+	<tr>
+		<td><%= f.id %></td>
+
+		<td><%= f.name %></td>
+		<td><%= f.price %></td>
+		<td><%= f.rating %></td>
+		<td><%= link_to "Edit", edit_restaurant_food_path(@restaurant.id, f.id) %></td>
+		<td><%= button_to "Delete", [@restaurant, f], :method => :delete %></td>
+	</tr>
+	<% end %>
+	</tbody>
+	</table>
+	<%= link_to "Add New Food", new_restaurant_food_path(@restaurant.id) %>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<%= link_to "Back to the Restaurants", restaurants_path %>

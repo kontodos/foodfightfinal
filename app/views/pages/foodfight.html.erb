@@ -1,0 +1,59 @@
+<body>
+<div class="navbar">
+	<ul>
+		&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li class="active"><%= link_to "Food Fight!", foodfight_path %></li>
+		<li id="login"><% if user_signed_in? %>
+		Logged in as <strong><%= current_user.email %></strong>.
+		
+		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+		<% else %>
+		<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+		<% end %></li>
+	</ul>
+</div>
+
+<div class="content2">
+	<div class="heading">
+		<h1>Let The Battle Begin!</h1>
+	</div>
+	<div class="leftpart">
+	
+	
+	<%= select_tag "restaurant_id", options_from_collection_for_select(@restaurants, "id", "name") %>
+	<%= button_to "Next", :controller => :pages, :action => :findresto %>
+
+	
+		
+	
+
+
+
+	</div>
+	
+	<div class="rightpart">
+	
+	</div>
+
+</div>
+</body>

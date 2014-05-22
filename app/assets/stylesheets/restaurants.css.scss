@@ -1,0 +1,35 @@
+// Place all the styles related to the Restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.food
+{
+width: auto;
+height: 200px;
+float: left;
+padding-bottom: 20px;
+}
+
+.thumb
+{
+float: left;
+margin-left: 20px;
+padding-top: 15px;
+}
+
+.details
+{
+width: auto;
+float: left;
+padding-top: 15px;
+}
+
+.details h3
+{
+color: #1B81CC;
+}
+
+h3
+{
+color: brown;
+}

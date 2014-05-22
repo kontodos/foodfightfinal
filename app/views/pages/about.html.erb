@@ -1,0 +1,49 @@
+<body>
+<div class="navbar">
+	<ul>
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+
+		<li><%= link_to "Home", root_path %></li>
+		<li class="active"><%= link_to "About", about_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li><%= link_to "Food Fight!", foodfight_path %></li>
+		<li id="login"><% if user_signed_in? %>
+		Logged in as <strong><%= current_user.email %></strong>.
+		
+		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+		<% else %>
+		<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+		<% end %></li>
+	</ul>
+</div>
+
+
+<div class="content2">
+	<div class="heading">
+		<h1>About Us</h1>
+	</div>
+	<br />
+	<br />
+	<div class="words">
+	<p><span class="emphasize">Food Fight</span> is a project created by 3rd year MIS students namely Marty Geronimo and Justine Young. The purpose of this website is to inform and guide everyone on where to eat,
+	what is the best dish, and other details like how much it costs. What makes this site different is that we offer users an avenue to compare and contrast different dishes to help them decide
+	where to eat. Through FoodFight.com, one can find the best of the best dishes the world has to offer.</p>
+	</div>
+</div>
