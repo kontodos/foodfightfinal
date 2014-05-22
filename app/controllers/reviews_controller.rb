@@ -20,6 +20,7 @@ before_action :authenticate_user!
 	
 	@review.content = params[:review][:content]
 	@review.posted_on = DateTime.now
+	@review.rating = params[:review][:rating]
 	@review.user = current_user
 	
 	@review.save!
@@ -29,6 +30,26 @@ before_action :authenticate_user!
 	
 	@user.reviews << @review
 	@user.save!
+	
+	redirect_to restaurant_food_path(@restaurant.id, @food.id)
+  end
+  
+  def edit
+	@restaurant = Restaurant.find(params[:restaurant_id])
+	@food = Food.find(params[:food_id])
+	@review = Review.find(params[:id])
+  end
+  
+  def update
+	@restaurant = Restaurant.find(params[:restaurant_id])
+	@food = Food.find(params[:food_id])
+	@review = Review.find(params[:id])
+	
+	@review.content = params[:review][:content]
+	@review.posted_on = DateTime.now
+	@review.rating = params[:review][:rating]
+	
+	@review.save!
 	
 	redirect_to restaurant_food_path(@restaurant.id, @food.id)
   end

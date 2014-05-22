@@ -41,6 +41,7 @@
 <li><%= r.user.email %></li>
 <li><%= r.content %></li>
 <li><%= r.posted_on %></li>
+<li><%= r.rating %>/10</li>
 <%= link_to "Edit", edit_restaurant_food_review_path(@restaurant.id, @food.id, r.id) %></td>
 <%= button_to "Delete", [@restaurant, @food, r], :method => :delete %></td>
 <% end %>
