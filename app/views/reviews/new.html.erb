@@ -1,4 +1,3 @@
-<body>
 <div class="navbar">
 	<ul>
 		<li><%= link_to "Home", root_path %></li>
@@ -18,23 +17,10 @@
 
 <div class="content2">
 	<div class="heading">
-		<h1><%= @restaurant.name %></h1>
+	<h1><%= @restaurant.name %>'s <%= @food.name %> </h1>
 	</div>
-	
-	<% @restaurant.foods.each do |f| %>
-	<div class="food">
-		<div class="thumb">
-			<%= image_tag f.avatar.url(:medium) %></li>
-		</div>
-		
-		<div class="details">
-			<h3><%= f.name %></h3>
-			<h4>Price:&nbsp<%= f.price %></h4>
-			<h4>Description:&nbsp<%= f.description %></h4>
-			<%= link_to "Write Review", new_restaurant_food_review_path(@restaurant.id, f.id) %>
-			<%= link_to "View Review", restaurant_food_path(@restaurant.id, f.id)%>
-		</div>
+	<br />
+	<div class="words">
+		<%= render :partial => 'form' %>
 	</div>
-	<% end %>
-
 </div>

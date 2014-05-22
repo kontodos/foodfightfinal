@@ -24,7 +24,7 @@
 		<li><%= link_to "Contact", contact_path %></li>
 		<li><%= link_to "Food Fight!", foodfight_path %></li>
 		<li id="login"><% if user_signed_in? %>
-		Logged in as <strong><%= current_user.email %></strong>.
+		Logged in as <strong><a href = profile><%= current_user.email %></a></strong>.
 		
 		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 		<% else %>

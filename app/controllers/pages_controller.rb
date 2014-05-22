@@ -3,7 +3,11 @@ class PagesController < ApplicationController
  def home
 	@restaurants = Restaurant.all
   end
-
+  
+	def profile
+		@user = current_user
+		
+	end
   def about
   end
 

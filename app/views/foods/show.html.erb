@@ -1,7 +1,23 @@
-<body>
 <div class="navbar">
 	<ul>
-		<li><%= link_to "Home", root_path %></li>
+		&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+		<li class="active"><%= link_to "Home", root_path %></li>
 		<li><%= link_to "About", about_path %></li>
 		<li><%= link_to "Contact", contact_path %></li>
 		<li><%= link_to "Food Fight!", foodfight_path %></li>
@@ -14,27 +30,20 @@
 		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 		<% end %></li>
 	</ul>
-</div>
+</div>	
 
 <div class="content2">
 	<div class="heading">
-		<h1><%= @restaurant.name %></h1>
-	</div>
-	
-	<% @restaurant.foods.each do |f| %>
-	<div class="food">
-		<div class="thumb">
-			<%= image_tag f.avatar.url(:medium) %></li>
-		</div>
-		
-		<div class="details">
-			<h3><%= f.name %></h3>
-			<h4>Price:&nbsp<%= f.price %></h4>
-			<h4>Description:&nbsp<%= f.description %></h4>
-			<%= link_to "Write Review", new_restaurant_food_review_path(@restaurant.id, f.id) %>
-			<%= link_to "View Review", restaurant_food_path(@restaurant.id, f.id)%>
-		</div>
-	</div>
-	<% end %>
+<h1> <%= @restaurant.name %>'s <%= @food.name %></h1>
+</div>
+<ul>
+<% @food.reviews.each do |r| %>
+<li><%= r.user.email %></li>
+<li><%= r.content %></li>
+<li><%= r.posted_on %></li>
+<%= link_to "Edit", edit_restaurant_food_review_path(@restaurant.id, @food.id, r.id) %></td>
+<%= button_to "Delete", [@restaurant, @food, r], :method => :delete %></td>
+<% end %>
+</ul>
 
 </div>

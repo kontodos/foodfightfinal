@@ -1,0 +1,29 @@
+<h1>List of your reviews.</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Content</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	
+	<tbody>
+	<% @user.reviews.each do |f| %>
+	<tr>
+		<td><%= f.id %></td>
+
+		
+		<td><%= f.content %></td>
+		<td><%= f.posted_on %></td>
+		
+	</tr>
+	<% end %>
+	</tbody>
+	</table>
+	<%= link_to "Add New Food", new_restaurant_food_path(@restaurant.id) %>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<%= link_to "Back to the Restaurants", restaurants_path %>
