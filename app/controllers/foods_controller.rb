@@ -1,13 +1,23 @@
 class FoodsController < ApplicationController
 
 def index
-@restaurant = Restaurant.find(params[:restaurant_id])
+if current_user == nil
+	redirect_to root_path
+elsif current_user.email.include? 'admin@admin.com'
+	@restaurant = Restaurant.find(params[:restaurant_id])
+else
+	redirect_to root_path
+end
 
 end
 
 def new
-@restaurant = Restaurant.find(params[:restaurant_id])
-@food = Food.new
+	if current_user.email.include? 'admin@admin.com'
+		@restaurant = Restaurant.find(params[:restaurant_id])
+		@food = Food.new
+	else 
+		redirect_to root_path
+	end
 end
 
 def create
@@ -30,8 +40,12 @@ def show
 end
 
 def edit
-@restaurant = Restaurant.find(params[:restaurant_id])
-@food = Food.find(params[:id])
+if current_user.email.include? 'admin@admin.com'
+	@restaurant = Restaurant.find(params[:restaurant_id])
+	@food = Food.find(params[:id])
+else
+	redirect_to root_path
+	end
 end
 
 def update
@@ -46,10 +60,14 @@ redirect_to :restaurant_foods
 end
 
 def destroy
+if current_user.email.include? 'admin@admin.com'
 @restaurant = Restaurant.find(params[:restaurant_id])
 	@food = Food.find(params[:id])
 	@food.destroy!
 	redirect_to :action => :index
+else
+	redirect_to root_path
+end
 end
 
 private

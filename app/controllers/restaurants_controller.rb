@@ -1,11 +1,23 @@
 class RestaurantsController < ApplicationController
+before_action :authenticate_user!
 
 def index
+if current_user.email.include? 'admin@admin.com'
 	@restaurants = Restaurant.all
+	else
+		redirect_to root_path
+	end
 end
 
 def new
+if current_user == nil
+	redirect_to root_path
+elsif current_user.email.include? 'admin@admin.com'
 	@restaurant = Restaurant.new
+else
+	redirect_to root_path
+end
+
 end
   
 def create
@@ -22,11 +34,17 @@ end
 
 def show
 	@restaurant = Restaurant.find(params[:id])
-	#Food.new
+
 end
 
 def edit
+if current_user == nil
+	redirect_to root_path
+elsif current_user.email.include? 'admin@admin.com'
 	@restaurant = Restaurant.find(params[:id])
+else
+	redirect_to root_path
+	end
 end
 
   def update

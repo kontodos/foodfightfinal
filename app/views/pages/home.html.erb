@@ -2,29 +2,13 @@
 <body>
 <div class="navbar">
 	<ul>
-		&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
+		<li><%= link_to "Food Fight!", root_path %></li> |
 		<li class="active"><%= link_to "Home", root_path %></li>
 		<li><%= link_to "About", about_path %></li>
 		<li><%= link_to "Contact", contact_path %></li>
-		<li><%= link_to "Food Fight!", foodfight_path %></li>
+		<li><%= link_to "Battle", foodfight_path %></li>
 		<li id="login"><% if user_signed_in? %>
-		Logged in as <strong><a href = profile><%= current_user.email %></a></strong>.
+		Logged in as <strong><a href = profile><%= current_user.email %></a></strong> |
 		
 		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 		<% else %>

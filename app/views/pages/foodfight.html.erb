@@ -1,29 +1,13 @@
 <body>
 <div class="navbar">
 	<ul>
-		&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
+		<li><%= link_to "Food Fight!", root_path %></li> |
 		<li><%= link_to "Home", root_path %></li>
 		<li><%= link_to "About", about_path %></li>
 		<li><%= link_to "Contact", contact_path %></li>
-		<li class="active"><%= link_to "Food Fight!", foodfight_path %></li>
+		<li class="active"><%= link_to "Battle", foodfight_path %></li>
 		<li id="login"><% if user_signed_in? %>
-		Logged in as <strong><%= current_user.email %></strong>.
+		Logged in as <strong><%= current_user.email %></strong> |
 		
 		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 		<% else %>
@@ -37,23 +21,26 @@
 	<div class="heading">
 		<h1>Let The Battle Begin!</h1>
 	</div>
-	<div class="leftpart">
 	
+	<div class="battle">
+	
+	<h2>
+	<%= form_tag("/findresto", method: "post") do %>
 	
 	<%= select_tag "restaurant_id", options_from_collection_for_select(@restaurants, "id", "name") %>
-	<%= button_to "Next", :controller => :pages, :action => :findresto %>
-
 	
-		
+	Versus
+	
+	
+	<%= select_tag "restaurant_id2", options_from_collection_for_select(@restaurants, "id", "name") %>
+	<div id="compare"><%= submit_tag("Go!") %></div>
 	
 
-
-
+	<% end %>
+		</h2>
 	</div>
 	
-	<div class="rightpart">
-	
-	</div>
+
 
 </div>
 </body>

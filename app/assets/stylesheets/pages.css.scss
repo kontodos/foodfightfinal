@@ -90,6 +90,7 @@ border: 1px solid #FFCC00;
 background-color: white;
 margin-top: 15px;
 width: 1000px;
+min-height: 500px;
 height: auto;
 margin-left: auto;
 margin-right: auto;
@@ -98,12 +99,27 @@ border: 1px solid #FFCC00;
 color:#663300;
 }
 
+.content3 //content for other pages
+{
+background-color: white;
+margin-top: 15px;
+width: 1000px;
+min-height: 500px;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+overflow: scroll;
+border: 1px solid #FFCC00;
+color:#663300;
+}
+
+
 
 .leftpart
 {
 float: left;
 width: 499px;
-height: 500px;
+height: auto;
 margin-left: auto;
 margin-right: auto;
 border-right: 2px solid #FFCC00;
@@ -118,7 +134,7 @@ border-right: 2px solid #FFCC00;
 {
 float: left;
 width: 499px;
-height: 500px;
+height: auto;
 margin-left: auto;
 margin-right: auto;
 }
@@ -168,6 +184,7 @@ margin-top: 10px;
 {
 width: 280px;
 height: 200px;
+border-top: 2px solid red;
 }
 
 	#tilepic1
@@ -188,6 +205,7 @@ margin-left: auto;
 margin-right: auto;
 margin-top: 10px;
 margin-bottom: 10px;
+word-wrap: break-word
 }
 
 .tilecontent h4
@@ -200,7 +218,7 @@ margin-left: 5px;
 .words
 {
 width: 900px;
-height: auto;
+height: 300px;
 margin-left: auto;
 margin-right: auto;
 }
@@ -220,5 +238,69 @@ font-size: 20px;
 {
 display: inline;
 }
+
+.battle
+{
+width: 660px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 100px;
+margin-bottom: 100px;
+}
+
+#compare
+{
+width: 120px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.icon img
+{
+float: left;
+width: 200px;
+height: 200px;
+}
+
+.info
+{
+float: left;
+width: 299px;
+height: 200px;
+
+}
+
+
+
+.foodlist
+{
+padding-top: 20px;
+float: left;
+width: 499px;
+height: 200px;
+border-top: 2px solid #FFCC00;
+}
+
+.foodlistcontent
+{
+width: 450px;
+height: 200px;
+margin-left: 20px;
+}
+
+.thumb2 img
+{
+float: left;
+width: 120px;
+height: 120px;
+}
+
+.details2
+{
+margin-top: 10px;
+float: left;
+}
+
+
 
 
