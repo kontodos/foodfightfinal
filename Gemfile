@@ -43,3 +43,5 @@ gem 'paperclip', '3.5'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'devise'
+
+gem 'pg'
