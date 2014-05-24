@@ -1,5 +1,33 @@
-<h2>Forgot your password?</h2>
+<div class="navbar">
+	<ul>
+		<li><%= link_to "Food Fight!", root_path %></li> |
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li><%= link_to "Battle", foodfight_path %></li>
+		
+		<li class="login">
+		<% if user_signed_in? %>
+		
+		Logged in as <strong><%= current_user.email %></strong> |
+		
+		<%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+		<% else %>
+		<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> | 
+		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+		<% end %>
+	</ul>
+</div>
 
+<div class="content2">
+	<div class="heading">
+		<h1>Forgot Your Password</h1>
+	</div>
+	<br />
+	<br />
+	<br />
+	
+	<div class="words">
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
@@ -7,9 +35,10 @@
     <%= f.input :email, required: true, autofocus: true %>
   </div>
 
-  <div class="form-actions">
+
     <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
